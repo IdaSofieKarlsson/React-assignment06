@@ -8,13 +8,7 @@ function Login() {
 
     const [loginUsername, setLoginUsername] = useState("");
     const [loginUserPassword, setLoginUserPassword] = useState("");
-    const [userList, setUserList] = useState([]);
-    const [filteredUsers, setFilteredUsers] = useState(users);
     const [verified, setVerified] = useState(false);
-
-    /*const changeVerified = () => {
-        setVerified(!verified);
-    };*/
 
     const verifyUser = () => {
         //filters the users array from local storage. If there is a match, 
@@ -51,10 +45,8 @@ function Login() {
             {!verified && (
                 <h3>Wrong username and/or password</h3>
             )}
-
         </div>
     );
-
 };
 
 export default Login;

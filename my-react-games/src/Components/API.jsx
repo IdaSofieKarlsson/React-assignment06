@@ -27,7 +27,7 @@ const API = () => {
 
     return (
     <div>
-        <button onClick={generateCatFact}>Click for an interesting fact about cats</button>
+        <button  className="cat-fact-btn" onClick={generateCatFact}>Click for an interesting fact about cats</button>
         <p>{catfact.fact}</p>
     </div>);
     };

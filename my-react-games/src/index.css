@@ -6,8 +6,20 @@ div {
     
 }
 
-p {
+h1 {
+    font-size: 24px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: darkcyan;
+}
+
+h2 {
     font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: darkcyan;
+}
+
+p {
+    font-size: 12px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: darkcyan;
     display: block;
@@ -15,15 +27,20 @@ p {
 }
 
 button {
-    height: 100px;
-    width: 250px;
-    border: rgb(2, 10, 44) 3px solid;
+    height: 50px;
+    width: 150px;
+    border: rgb(1, 45, 45) 3px solid;
     background-color: rgb(197, 220, 220);
-    font-size: 20px;
+    font-size: 16px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: rgb(1, 45, 45);
     
 }
+.cat-fact-btn {
+    height: 50px;
+    width: 250px;
+}
+
 button:hover {
     cursor: crosshair;
 }

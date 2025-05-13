@@ -8,6 +8,7 @@ function Navbar() {
                 <li><Link to='/registration'>Register Account</Link></li>
                 <li><Link to='/login'>Log In</Link></li>
                 <li><Link to='/simplefun'>Simple Fun!</Link></li>
+                <li><Link to='/localstorageexercise'>Local Storage Exercise</Link></li>
             </ul>
         </nav>
     </div>

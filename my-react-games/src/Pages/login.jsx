@@ -10,38 +10,28 @@ function Login() {
     const [loginUserPassword, setLoginUserPassword] = useState("");
     const [userList, setUserList] = useState([]);
     const [filteredUsers, setFilteredUsers] = useState(users);
+    const [verified, setVerified] = useState(false);
+
+    /*const changeVerified = () => {
+        setVerified(!verified);
+    };*/
 
     const verifyUser = () => {
-
-        const loginUser = {
-            username: loginUsername,
-            userPassword: loginUserPassword,
-        };
-
-        /*const handleFilter = (event) => {
-        const value = event.target.value;
-        const filtered = users.filter(user => user.username.includes(value));
-        setFilteredUsers(filtered);
-        };*/
-        //setLoginUsername("");
-        //setLoginUserPassword("");
+        //filters the users array from local storage. If there is a match, 
+        // the will be an object in the array result and length.result will be (at least) 1
+        let result = users.filter(({username,userPassword}) => [loginUserPassword].includes(userPassword) && username == loginUsername);
+        console.log(result);
         
-        if ((users.filter(user => user.username.includes(loginUsername))) 
-            && (users.filter(user => user.userPassword.includes(loginUserPassword)))) {
-            return (
-            <button><Link to='/simplefun'>Simple Fun!</Link></button>);
+        if (result.length > 0) {
+            setVerified(true);
         } else {
-            return (
-            <h3>Wrong username and/or password</h3>)
-        };
+            setVerified(false);
+        }; 
+        console.log(verified);
 
-        /*<input type="text" onChange={handleFilter} />
-        {filteredUsers.map(user => (
-        <div key={user.name}>
-            <p>Name: {user.name}</p>
-            <p>Age: {user.age}</p>
-        </div>
-        ))};*/
+        //clears the input fields
+        setLoginUsername("");
+        setLoginUserPassword("");
     };
 
     return (
@@ -52,6 +42,16 @@ function Login() {
             <input type="text" minLength={1} value={loginUserPassword} placeholder="your password" 
             onChange={(e) => setLoginUserPassword(e.target.value)}/>
             <button onClick={verifyUser}>Log In</button>
+            
+            {verified && (
+                <div>
+                    <button><Link to='/simplefun'>Simple Fun!</Link></button>
+                </div>
+            )}
+            {!verified && (
+                <h3>Wrong username and/or password</h3>
+            )}
+
         </div>
     );
 
